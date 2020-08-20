@@ -8,5 +8,7 @@ lyric_list = soup.find(class_='lyrics')
 lyrics = lyric_list.find_all('p')
 lyric_list.text
 
-print(lyric_list.get_text())
+s = re.sub(r'\[(.*?)\]', '', lyric_list.get_text())
+
+print(s)
 
